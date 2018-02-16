@@ -90,3 +90,16 @@ Example Compliance failure notification:
   "automate_failure_url": "https://automate.example.com/viz/#/compliance/reporting/nodes/af08c952-816b-4933-8476-9705a7a3be64"
 }
 ```
+
+Example test notification:
+```javascript
+{
+  "username": "Chef_Automate",
+  "attachments": [
+    {
+      "text": "Test message from Chef Automate!",
+      "fallback": "Test message from Chef Automate!"
+    }
+  ]
+}
+```
