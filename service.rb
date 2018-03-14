@@ -16,20 +16,23 @@ post '/' do
   message = JSON.parse(request.body.read)
 
   # Write message to file for now for troubleshooting
-  File.write('./tmp/output.txt', JSON.pretty_generate(message))
+  File.write('./output.txt', JSON.pretty_generate(message))
 
   if message['username'] == 'Chef_Automate' && message['attachments']
-    puts 'Received webhook test from Chef Automate'
+    puts 'Received webhook test from Chef Automate:'
+    puts JSON.pretty_generate(message)
     halt 200
   end
 
   if message['type'] == 'node_failure'
-    puts 'Received node failure'
+    puts 'Received node failure:'
+    puts JSON.pretty_generate(message)
     halt 200
   end
 
   if message['type'] == 'compliance_failure'
-    puts 'Received compliance failure'
+    puts 'Received compliance failure:'
+    puts JSON.pretty_generate(message)
     halt 200
   end
 
