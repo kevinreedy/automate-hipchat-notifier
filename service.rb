@@ -16,7 +16,7 @@ post '/' do
   message = JSON.parse(request.body.read)
 
   # Write message to file for now for troubleshooting
-  File.write('./output.txt', JSON.pretty_generate(message))
+  File.write('./data/output.txt', JSON.pretty_generate(message))
 
   if message['username'] == 'Chef_Automate' && message['attachments']
     puts 'Received webhook test from Chef Automate:'
