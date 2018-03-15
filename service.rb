@@ -18,8 +18,16 @@ post '/' do
   # Write message to file for now for troubleshooting
   File.write('./data/output.txt', JSON.pretty_generate(message))
 
+  # A1 webhook test
   if message['username'] == 'Chef_Automate' && message['attachments']
-    puts 'Received webhook test from Chef Automate:'
+    puts 'Received webhook test from Chef Automate 1.x:'
+    puts JSON.pretty_generate(message)
+    halt 200
+  end
+
+  # A2 webhook test
+  if message['text'] == 'TEST: Successful validation completed by Automate'
+    puts 'Received webhook test from Chef Automate 2.x:'
     puts JSON.pretty_generate(message)
     halt 200
   end
