@@ -9,7 +9,7 @@ get '/' do
   'Hello World! This project takes notifications from Chef Automate about failed
   Chef Client and Inspec runs, formats them, and sends the result to a HipChat
   room. See <a href="https://github.com/kevinreedy/automate-hipchat-notifier">
-  https://github.com/kevinreedy/automate-hipchat-notifier</a> for more details.'
+  https://github.com/kevinreedy/automate-hipchat-notifier</a> for more details!'
 end
 
 post '/' do
